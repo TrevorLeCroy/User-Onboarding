@@ -1,0 +1,33 @@
+form {
+  margin: 0px auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px black;
+
+  width: 40rem;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-items: space-around;
+}
+
+form h2 {
+  margin: 0px auto;
+  text-align: center;
+}
+
+.form-container {
+  margin: 0px auto;
+  width: 40rem;
+  clear: both;
+}
+
+.text-input {
+  border-radius: 10px;
+  width: 50%;
+  margin-left: 20px;
+  clear: both;
+}
+
+
