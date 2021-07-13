@@ -13,6 +13,7 @@ const Form = (props) => {
                        value={props.form.name}
                        onChange={props.handleChange}>
                 </input>
+                <pre>{props.errors.name}</pre>
 
                 <label>Email</label>
                 <input className='text-input'
@@ -21,7 +22,8 @@ const Form = (props) => {
                        value={props.form.email}
                        onChange={props.handleChange}>
                 </input>
-                
+                <pre>{props.errors.email}</pre>    
+            
                 <label>Password</label>
                 <input className='text-input'
                        name='password'
@@ -29,7 +31,8 @@ const Form = (props) => {
                        value={props.form.password}
                        onChange={props.handleChange}>
                 </input>
-                
+                <pre>{props.errors.password}</pre>
+
                 <label>
                     Terms Of Service
                     <input 
@@ -39,6 +42,7 @@ const Form = (props) => {
                         onChange={props.handleChange}>
                     </input>
                 </label>
+                <pre>{props.errors.tos}</pre>
                 
                 {/* <label>
                     <input type='button'

@@ -56,7 +56,7 @@ function App() {
   }, [form])
 
   return (
-      <Form handleChange={handleChange} submitHandler={submitHandler} form={form} disabled={disabled}/>
+      <Form handleChange={handleChange} submitHandler={submitHandler} form={form} disabled={disabled} errors={errors}/>
   );
 }
 

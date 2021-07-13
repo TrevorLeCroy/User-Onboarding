@@ -12,6 +12,11 @@ form {
   justify-items: space-around;
 }
 
+pre {
+  margin: 0px auto;
+  color: red;
+}
+
 form h2 {
   margin: 0px auto;
   text-align: center;
