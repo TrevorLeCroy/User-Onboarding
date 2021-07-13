@@ -1,6 +1,12 @@
-form {
+.main-container {
   margin: 0px auto;
   margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+form {
+  margin: 0px auto;
   border-radius: 10px;
   box-shadow: 2px 2px 4px black;
 
@@ -35,4 +41,26 @@ form h2 {
   clear: both;
 }
 
+.users-tab {
+  margin: 0px auto;
+  padding: 10px;
+  text-align: center;
+  width: 40rem;
+  box-shadow: 2px 2px 4px black;
+}
 
+.users-tab p {
+  margin: 0px;
+  font-size: large;
+}
+
+.user-container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.user-card {
+  margin-top: 20px;
+  box-shadow: 2px 2px 4px grey;
+  border-radius: 10px;
+}

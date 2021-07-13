@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Form = (props) => {
+const Form = props => {
     return (
         <div className='form-container'>
             <form onSubmit={props.submitHandler}>
@@ -43,13 +43,6 @@ const Form = (props) => {
                     </input>
                 </label>
                 <pre>{props.errors.tos}</pre>
-                
-                {/* <label>
-                    <input type='button'
-                           value='Submit'
-                           name='submit'>
-                    </input>
-                </label> */}
                 <button disabled={props.disabled}> Submit </button>
             </form>
         </div>

@@ -2,8 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import * as yup from 'yup';
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import Form from './Form';
+import Users from './Users';
 
 let schema = yup.object().shape({
   name     : yup.string().required('Name is required'),
@@ -24,9 +26,9 @@ function App() {
   const [disabled, setDisabled] = useState(true);
   const [errors, setErrors]      = useState(defaultForm);
   
-
   const setFormErrors = (name, value) => {
-    yup.reach(schema, name).validate(value)
+    yup.reach(schema, name)
+      .validate(value)
       .then(() => {
         setErrors({...errors, [name] : ''});
       })
@@ -47,7 +49,19 @@ function App() {
 
   const submitHandler = event => {
     event.preventDefault();
-    setUsers([...users, form]);
+    
+    const newUser = {
+      name     : form.name.trim(),
+      email    : form.email.trim(),
+      password : form.password,
+      tos      : form.tos
+    };
+
+    axios.post('https://reqres.in/api/users', newUser)
+      .then(res => {
+        console.log(res);
+        setUsers([...users, res.data]);
+      });
     setForm(defaultForm);
   }
 
@@ -56,8 +70,11 @@ function App() {
   }, [form])
 
   return (
+    <div className='main-container'>
       <Form handleChange={handleChange} submitHandler={submitHandler} form={form} disabled={disabled} errors={errors}/>
-  );
+      <Users users={users}/>
+    </div>
+    );
 }
 
 export default App;
